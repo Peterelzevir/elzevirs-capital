@@ -110,19 +110,29 @@ export function HeroSection() {
         <div className="absolute bottom-1/4 right-1/3 w-48 h-48 bg-primary/5 rounded-full filter blur-3xl animate-float-fast"></div>
       </div>
       
-      {/* Scroll indicator */}
+      {/* Improved scroll indicator */}
       <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 0.5 }}
       >
-        <p className="text-sm text-muted-foreground mb-2">Scroll Down</p>
         <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
+          className="flex flex-col items-center"
+          animate={{ 
+            y: [0, 5, 0],
+            opacity: [0.5, 1, 0.5]
+          }}
+          transition={{ 
+            repeat: Infinity, 
+            duration: 2,
+            ease: "easeInOut"
+          }}
         >
-          <ArrowDownIcon className="h-5 w-5 text-muted-foreground" />
+          <span className="text-sm font-medium text-primary/80 mb-2">Scroll Down</span>
+          <div className="w-8 h-8 rounded-full border-2 border-primary/30 flex items-center justify-center">
+            <ArrowDownIcon className="h-4 w-4 text-primary/80" />
+          </div>
         </motion.div>
       </motion.div>
     </section>
