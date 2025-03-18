@@ -3,7 +3,17 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { MoonIcon, SunIcon, MenuIcon, XIcon } from 'lucide-react'
+import { 
+  MoonIcon, 
+  SunIcon, 
+  MenuIcon, 
+  XIcon, 
+  HomeIcon, 
+  InfoIcon, 
+  BarChart3Icon,
+  FileTextIcon,
+  MailIcon
+} from 'lucide-react'
 import { ThemeToggle } from '@/components/theme/theme-toggle'
 import { cn } from '@/lib/utils'
 
@@ -30,9 +40,11 @@ export function Navbar() {
   )
   
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Portfolio', href: '#portfolio' },
+    { name: 'Home', href: '#home', icon: <HomeIcon className="w-4 h-4" /> },
+    { name: 'About', href: '#about', icon: <InfoIcon className="w-4 h-4" /> },
+    { name: 'Portfolio', href: '#portfolio', icon: <BarChart3Icon className="w-4 h-4" /> },
+    { name: 'Documentation', href: '#', icon: <FileTextIcon className="w-4 h-4" /> },
+    { name: 'Contact', href: '#', icon: <MailIcon className="w-4 h-4" /> },
   ]
   
   // Close mobile menu when clicking outside
@@ -80,16 +92,17 @@ export function Navbar() {
               </Link>
             </motion.div>
             
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation - Improved with active indicators */}
             <div className="hidden md:flex items-center space-x-8">
               <div className="flex items-center space-x-6">
-                {navItems.map((item) => (
+                {navItems.slice(0, 3).map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
                   >
-                    {item.name}
+                    <span>{item.name}</span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                   </Link>
                 ))}
               </div>
@@ -97,12 +110,12 @@ export function Navbar() {
               <ThemeToggle />
             </div>
             
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - Enhanced */}
             <div className="flex items-center md:hidden">
               <ThemeToggle />
               
               <button
-                className="ml-4 p-2 focus:outline-none focus:ring-0"
+                className="ml-4 p-2 focus:outline-none focus:ring-0 bg-primary/10 rounded-md"
                 onClick={(e) => {
                   e.stopPropagation()
                   setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -119,7 +132,7 @@ export function Navbar() {
         </div>
       </motion.header>
       
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation - Enhanced with icons */}
       <div 
         className={cn(
           "fixed inset-0 z-30 bg-background/80 backdrop-blur-sm md:hidden transition-opacity duration-300",
@@ -133,17 +146,37 @@ export function Navbar() {
           animate={{ x: isMobileMenuOpen ? 0 : '100%' }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-          <div className="flex flex-col space-y-8 mt-16">
+          {/* Mobile menu header */}
+          <div className="flex justify-between items-center border-b pb-4 mb-4">
+            <span className="font-bold">Menu</span>
+            <button
+              className="p-2 rounded-full hover:bg-muted/50"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <XIcon className="h-5 w-5" />
+            </button>
+          </div>
+          
+          {/* Mobile menu items with icons */}
+          <div className="flex flex-col space-y-1">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-lg font-medium px-4 py-2 rounded-md hover:bg-primary/5 transition-colors"
+                className="flex items-center gap-3 px-4 py-3 rounded-md hover:bg-primary/5 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                {item.name}
+                <span className="text-primary/70">{item.icon}</span>
+                <span>{item.name}</span>
               </Link>
             ))}
+          </div>
+          
+          {/* Mobile menu footer */}
+          <div className="mt-auto pt-4 border-t">
+            <div className="px-4 py-2 text-sm text-muted-foreground">
+              © 2025 Elzevir's Capital. All rights reserved.
+            </div>
           </div>
         </motion.div>
       </div>
