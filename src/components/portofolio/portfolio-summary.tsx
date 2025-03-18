@@ -85,7 +85,7 @@ export function PortfolioSummary({
                     color = '#F7931A';
                     break;
                   case 'solana':
-                    percentage = 15; // 25% for Solana
+                    percentage = 5; // 25% for Solana
                     color = '#00FFA3';
                     break;
                   case 'binancecoin':
@@ -93,7 +93,7 @@ export function PortfolioSummary({
                     color = '#F3BA2F';
                     break;
                   case 'ripple':
-                    percentage = 5; // 15% for XRP
+                    percentage = 10; // 15% for XRP
                     color = '#23292F';
                     break;
                   default:
