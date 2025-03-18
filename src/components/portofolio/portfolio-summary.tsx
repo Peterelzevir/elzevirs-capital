@@ -181,11 +181,11 @@ export function PortfolioSummary({
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="text-center">
               <p className="text-xs text-muted-foreground">Total Value</p>
-              <p className="text-lg font-semibold">$3.8M</p>
+              <p className="text-lg font-semibold">$96.7K</p>
             </div>
             <div className="text-center">
-              <p className="text-xs text-muted-foreground">24h Change</p>
-              <p className="text-lg font-semibold text-green-500">+2.14%</p>
+              <p className="text-xs text-muted-foreground">All Time Change</p>
+              <p className="text-lg font-semibold text-green-500">+569.47%</p>
             </div>
             <div className="text-center">
               <p className="text-xs text-muted-foreground">Assets</p>
