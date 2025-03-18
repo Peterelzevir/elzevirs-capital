@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect } from 'react'
 import { 
   getCryptoPrices, 
@@ -95,10 +97,10 @@ export function useCryptoData() {
     }
   }
   
-  // Initial fetch of chart data for all cryptocurrencies
+  // Initial fetch of chart data for all cryptocurrencies with default 30d (1M) timeframe
   useEffect(() => {
     Object.values(CRYPTO_IDS).forEach(id => {
-      fetchChartData(id)
+      fetchChartData(id, '30d')
     })
   }, [])
   
