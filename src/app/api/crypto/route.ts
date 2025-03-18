@@ -4,11 +4,15 @@ import { CRYPTO_IDS } from '@/lib/api'
 // CoinGecko API base URL
 const API_BASE_URL = 'https://api.coingecko.com/api/v3'
 
+// Mark this route as dynamic
+export const dynamic = 'force-dynamic'
+
 // API handler for getting crypto prices
 export async function GET(request: Request) {
   try {
-    const { searchParams } = new URL(request.url)
-    const action = searchParams.get('action')
+    // Use searchParams from URL object in a way that supports both static and dynamic rendering
+    const url = new URL(request.url)
+    const action = url.searchParams.get('action')
     
     if (action === 'prices') {
       // Get current prices for all cryptocurrencies in the portfolio
@@ -17,7 +21,7 @@ export async function GET(request: Request) {
         headers: {
           'Accept': 'application/json',
         },
-        next: { revalidate: 60 } // Revalidate every 60 seconds
+        cache: 'no-store'
       })
       
       if (!response.ok) {
@@ -29,8 +33,8 @@ export async function GET(request: Request) {
     } 
     else if (action === 'chart') {
       // Get chart data for a specific cryptocurrency
-      const id = searchParams.get('id')
-      const days = searchParams.get('days') || '30'
+      const id = url.searchParams.get('id')
+      const days = url.searchParams.get('days') || '30'
       
       if (!id) {
         return NextResponse.json({ error: 'Missing id parameter' }, { status: 400 })
@@ -40,7 +44,7 @@ export async function GET(request: Request) {
         headers: {
           'Accept': 'application/json',
         },
-        next: { revalidate: 300 } // Revalidate every 5 minutes
+        cache: 'no-store'
       })
       
       if (!response.ok) {
