@@ -5,7 +5,7 @@ const nextConfig = {
     domains: ['assets.coingecko.com'],
   },
   experimental: {
-    optimizeCss: true,
+    // Removing optimizeCss which requires critters module
     scrollRestoration: true,
   },
 }
