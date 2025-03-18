@@ -5,7 +5,7 @@ import { Loading } from '@/components/loading'
 import { Navbar } from '@/components/navbar'
 import { HeroSection } from '@/components/hero-section'
 import { AboutSection } from '@/components/about-section'
-import { PortfolioSection } from '@/components/portfolio/portfolio-section'
+import { PortfolioSection } from '@/components/portofolio/portfolio-section'
 import { Background3D } from '@/components/animations/3d-background'
 
 export default function Home() {
