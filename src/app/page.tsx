@@ -5,8 +5,9 @@ import { Loading } from '@/components/loading'
 import { Navbar } from '@/components/navbar'
 import { HeroSection } from '@/components/hero-section'
 import { AboutSection } from '@/components/about-section'
-import { PortfolioSection } from '@/components/portofolio/portfolio-section'
+import { PortfolioSection } from '@/components/portfolio/portfolio-section'
 import { Background3D } from '@/components/animations/3d-background'
+import { Footer } from '@/components/footer'
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
@@ -32,6 +33,7 @@ export default function Home() {
             <HeroSection />
             <AboutSection />
             <PortfolioSection />
+            <Footer />
           </div>
         </>
       )}
