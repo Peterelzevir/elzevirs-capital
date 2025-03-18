@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <!-- Abstract background -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" stop-opacity="1" />
+      <stop offset="100%" stop-color="#1e293b" stop-opacity="1" />
+    </linearGradient>
+    
+    <linearGradient id="gradient2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.1" />
+    </linearGradient>
+    
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background rectangle -->
+  <rect width="1920" height="1080" fill="url(#gradient1)" />
+  
+  <!-- Abstract shapes -->
+  <g opacity="0.6" filter="url(#glow)">
+    <!-- Large hexagon -->
+    <polygon 
+      points="960,200 1200,340 1200,620 960,760 720,620 720,340" 
+      fill="none" 
+      stroke="url(#gradient2)" 
+      stroke-width="2" 
+    />
+    
+    <!-- Smaller hexagons -->
+    <polygon 
+      points="600,400 720,460 720,580 600,640 480,580 480,460" 
+      fill="none" 
+      stroke="#3b82f6" 
+      stroke-opacity="0.2" 
+      stroke-width="2"
+    />
+    
+    <polygon 
+      points="1320,400 1440,460 1440,580 1320,640 1200,580 1200,460" 
+      fill="none" 
+      stroke="#8b5cf6" 
+      stroke-opacity="0.2" 
+      stroke-width="2"
+    />
+    
+    <!-- Grid lines -->
+    <line x1="0" y1="540" x2="1920" y2="540" stroke="#f8fafc" stroke-opacity="0.05" stroke-width="1" />
+    <line x1="960" y1="0" x2="960" y2="1080" stroke="#f8fafc" stroke-opacity="0.05" stroke-width="1" />
+    
+    <!-- Price chart line (abstract) -->
+    <path 
+      d="M240,700 Q480,400 720,600 T1200,500 T1680,650" 
+      fill="none" 
+      stroke="#10b981" 
+      stroke-opacity="0.3" 
+      stroke-width="3" 
+    />
+    
+    <!-- Circle decorations -->
+    <circle cx="480" cy="600" r="8" fill="#3b82f6" fill-opacity="0.3" />
+    <circle cx="720" cy="600" r="8" fill="#8b5cf6" fill-opacity="0.3" />
+    <circle cx="960" cy="500" r="8" fill="#f43f5e" fill-opacity="0.3" />
+    <circle cx="1200" cy="500" r="8" fill="#f59e0b" fill-opacity="0.3" />
+    <circle cx="1440" cy="600" r="8" fill="#10b981" fill-opacity="0.3" />
+  </g>
+  
+  <!-- Random small dots for texture -->
+  <g opacity="0.4">
+    <circle cx="200" cy="200" r="2" fill="#f8fafc" />
+    <circle cx="400" cy="300" r="1" fill="#f8fafc" />
+    <circle cx="600" cy="500" r="2" fill="#f8fafc" />
+    <circle cx="800" cy="200" r="1" fill="#f8fafc" />
+    <circle cx="1000" cy="300" r="2" fill="#f8fafc" />
+    <circle cx="1200" cy="400" r="1" fill="#f8fafc" />
+    <circle cx="1400" cy="200" r="2" fill="#f8fafc" />
+    <circle cx="1600" cy="500" r="1" fill="#f8fafc" />
+    <circle cx="1800" cy="300" r="2" fill="#f8fafc" />
+    <circle cx="300" cy="700" r="1" fill="#f8fafc" />
+    <circle cx="500" cy="800" r="2" fill="#f8fafc" />
+    <circle cx="700" cy="900" r="1" fill="#f8fafc" />
+    <circle cx="900" cy="700" r="2" fill="#f8fafc" />
+    <circle cx="1100" cy="800" r="1" fill="#f8fafc" />
+    <circle cx="1300" cy="700" r="2" fill="#f8fafc" />
+    <circle cx="1500" cy="900" r="1" fill="#f8fafc" />
+    <circle cx="1700" cy="800" r="2" fill="#f8fafc" />
+  </g>
+</svg>
