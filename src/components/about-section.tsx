@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils'
 const features = [
   {
     icon: <CoinsIcon className="h-6 w-6" />,
-    title: "Premium Assets",
+    title: "Good Assets",
     description: "Our portfolio focuses exclusively on high-quality cryptocurrency assets with proven track records and strong fundamentals.",
     color: "bg-blue-500/10 text-blue-500",
     delay: 0.1,
@@ -57,7 +57,7 @@ export function AboutSection() {
             About Elzevir&apos;s Capital
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            A premium cryptocurrency portfolio focused on strategic investments in leading digital assets. We combine market expertise with innovative technology to maximize growth potential.
+            A good cryptocurrency portfolio focused on strategic investments in leading digital assets. We combine market expertise with innovative technology to maximize growth potential.
           </p>
         </motion.div>
         
@@ -92,8 +92,8 @@ export function AboutSection() {
           transition={{ duration: 0.6, delay: 0.5 }}
         >
           <div>
-            <h3 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">4+</h3>
-            <p className="text-muted-foreground mt-2">Premium Assets</p>
+            <h3 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">4</h3>
+            <p className="text-muted-foreground mt-2">Good Assets</p>
           </div>
           <div>
             <h3 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500">24/7</h3>
