@@ -81,6 +81,31 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Improved mobile responsiveness */
+@media (max-width: 640px) {
+  .section {
+    padding: 4rem 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .crypto-card {
+    min-width: 100%;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* Custom animation classes */
 .animate-float {
   animation: float 6s ease-in-out infinite;
