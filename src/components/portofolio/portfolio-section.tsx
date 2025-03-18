@@ -10,6 +10,7 @@ import { CRYPTO_IDS, PORTFOLIO_DATA, TimeRange } from '@/lib/api'
 export function PortfolioSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
+  // Default to 30d (1M) as requested
   const [selectedTimeRange, setSelectedTimeRange] = useState<TimeRange>('30d')
   
   const { cryptoData, chartData, fetchChartData } = useCryptoData()
@@ -52,8 +53,8 @@ export function PortfolioSection() {
           onTimeRangeChange={handleTimeRangeChange}
         />
         
-        {/* Crypto Cards */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        {/* Crypto Cards - Improved grid for better mobile responsiveness */}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 portfolio-grid">
           {Object.entries(CRYPTO_IDS).map(([key, id], index) => (
             <motion.div
               key={id}
@@ -75,6 +76,41 @@ export function PortfolioSection() {
             </motion.div>
           ))}
         </div>
+        
+        {/* Market Insights Section */}
+        <motion.div
+          className="mt-16 bg-card border rounded-xl p-6 shadow-sm"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+        >
+          <h3 className="text-xl font-semibold mb-4">Market Insights</h3>
+          <p className="text-muted-foreground mb-6">
+            Our investment strategy focuses on high-quality digital assets with strong fundamentals and long-term potential.
+            The portfolio is regularly rebalanced to optimize risk-adjusted returns.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-muted/30 p-4 rounded-lg">
+              <h4 className="font-medium mb-2">Bitcoin Dominance</h4>
+              <p className="text-sm text-muted-foreground">
+                Bitcoin maintains its position as the cornerstone of our portfolio, providing stability and proven store of value.
+              </p>
+            </div>
+            <div className="bg-muted/30 p-4 rounded-lg">
+              <h4 className="font-medium mb-2">Smart Contract Platforms</h4>
+              <p className="text-sm text-muted-foreground">
+                Solana represents our investment in high-performance blockchain infrastructure powering the next generation of applications.
+              </p>
+            </div>
+            <div className="bg-muted/30 p-4 rounded-lg">
+              <h4 className="font-medium mb-2">Exchange & Utility Tokens</h4>
+              <p className="text-sm text-muted-foreground">
+                BNB and XRP provide exposure to exchange ecosystems and cross-border payment networks with established use cases.
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
       
       {/* Background elements */}
