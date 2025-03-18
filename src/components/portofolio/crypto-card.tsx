@@ -40,13 +40,13 @@ export function CryptoCard({
   
   return (
     <motion.div
-      className="relative bg-card border rounded-xl overflow-hidden"
+      className="relative bg-card border rounded-xl overflow-hidden crypto-card"
       whileHover={{ y: -5, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      {/* Card Header */}
-      <div className="p-6 flex items-center justify-between border-b">
+      {/* Card Header - Improved styling */}
+      <div className="p-4 sm:p-6 flex items-center justify-between border-b">
         <div className="flex items-center gap-3">
           <div 
             className="w-10 h-10 rounded-full flex items-center justify-center"
@@ -91,8 +91,8 @@ export function CryptoCard({
         )}
       </div>
       
-      {/* Price Chart */}
-      <div className="p-4 pt-2 relative" style={{ height: '240px' }}>
+      {/* Price Chart - Fixed height */}
+      <div className="p-4 pt-2 relative" style={{ height: '180px' }}>
         {isLoading ? (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-8 h-8 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
@@ -107,7 +107,7 @@ export function CryptoCard({
         )}
       </div>
       
-      {/* Card Footer */}
+      {/* Card Footer - Improved data display */}
       <div className="p-4 border-t bg-muted/30">
         <div className="grid grid-cols-3 gap-2">
           <div className="text-center">
@@ -143,7 +143,7 @@ export function CryptoCard({
         </div>
       </div>
       
-      {/* Background gradient on hover */}
+      {/* Background gradient on hover - Enhanced */}
       <motion.div 
         className="absolute inset-0 bg-gradient-to-br pointer-events-none opacity-10"
         style={{ 
