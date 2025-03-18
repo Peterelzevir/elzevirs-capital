@@ -72,7 +72,7 @@ export function HeroSection() {
           <motion.h1 
             className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight"
           >
-            Welcome to{' '}
+            This {' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50">
               Elzevir&apos;s Capital
             </span>
@@ -81,7 +81,7 @@ export function HeroSection() {
           <motion.p 
             className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto"
           >
-            A professional cryptocurrency portfolio showcasing strategic investments in Bitcoin, Solana, BNB, and XRP with real-time market data and comprehensive analytics.
+            My cryptocurrency portfolio showcasing strategic investments in Bitcoin, Solana, BNB, and XRP with real-time market data and comprehensive analytics.
           </motion.p>
         </div>
         
@@ -94,7 +94,7 @@ export function HeroSection() {
             href="#portfolio" 
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
           >
-            View Portfolio
+            View My Portfolio
             <ArrowDownIcon className="h-4 w-4" />
           </a>
         </motion.div>
